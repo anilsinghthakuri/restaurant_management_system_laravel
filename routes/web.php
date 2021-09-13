@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/',[UserController::class,'index'])->name('login');
+Route::post('/login',[UserController::class,'authenticate'])->name('login.authenticate');
+
+Route::middleware(['auth'])->group(function () {
+        Route::view('/dashboard', 'dashboard.index')->name('dashboard');
+
+
+
+
+
+        // route for logout
+        Route::get('/logout',[UserController::class,'logout'])->name('logout');
 });
