@@ -25,14 +25,10 @@
     <section class="add__categories">
      @include('layouts.partials.nav')
         <div class="container">
-            <div class="col-md-12 body-class ">
 
-                <div class="row">
 
                     @yield('components')
 
-                </div>
-            </div>
         </div>
 
     </section>

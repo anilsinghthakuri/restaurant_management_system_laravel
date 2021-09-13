@@ -114,7 +114,7 @@
                 <ul class="dropdown-menu" aria-labelledby="categoriesId">
 
                     <li>
-                        <a class="dropdown-item" href="/categories"> Product</a>
+                        <a class="dropdown-item" href="{{route('product-category.index')}}"> Product</a>
                     </li>
                     <li>
                         <a class="dropdown-item" href="/expense-category">Expenses

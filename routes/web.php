@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,8 @@ Route::post('/login',[UserController::class,'authenticate'])->name('login.authen
 Route::middleware(['auth'])->group(function () {
         Route::view('/dashboard', 'dashboard.index')->name('dashboard');
 
+        //product category routes
+        Route::resource('product-category', ProductCategoryController::class);
 
 
 
