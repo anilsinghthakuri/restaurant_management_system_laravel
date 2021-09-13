@@ -21,7 +21,7 @@
                     <li><a class="dropdown-item" href="/table"> Add Table</a></li>
                 </ul>
             </li>
-            <li class="nav-item dropdown">
+            {{-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="productID" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false"><i class="fa fa-archive"></i>
                     Product
@@ -38,8 +38,12 @@
 
                 </ul>
 
-            </li>
+            </li> --}}
 
+            <li class="nav-item">
+                <a class="nav-link  " aria-current="active" href="{{route('product.index')}}"> <i class="fa fa-archive"></i>
+                    Products</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link  " aria-current="active" href="/credits"> <i class="fa fa-hospital"></i>
                     Collection</a>

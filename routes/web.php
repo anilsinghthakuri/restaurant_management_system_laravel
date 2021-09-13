@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,9 @@ Route::middleware(['auth'])->group(function () {
 
         //product category routes
         Route::resource('product-category', ProductCategoryController::class);
+
+        //product routes
+        Route::resource('product', ProductController::class);
 
 
 

@@ -17,6 +17,10 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
+        $this->call([
+            ProductCategorySeeder::class,
+        ]);
+
         DB::table('users')->insert([
             'name'=>'admin',
             'email'=>'admin@user.com',
