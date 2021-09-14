@@ -45,6 +45,11 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+
+        $request->validate([
+            'product_name'=>'required|unique:products,product_name|max:20',
+            'product_price'=>'required',
+        ]);
         Product::create($request->except('_token'));
         return redirect(route('product.index'))->with('message','Product Added Successfully');
     }
@@ -69,10 +74,12 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $product_data = $this->fetch_product();
+        $product_category_data = $this->fetch_product_category();
         $this->updatemode = true;
         return view('products.product.index',[
             'product_data'=>$product_data,
             'product'=>$product,
+            'product_category_data'=>$product_category_data,
             'updatemode'=>$this->updatemode,
         ]);
     }
@@ -86,6 +93,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
+        // dd($request->all());
         $product->update($request->except('_token'));
         return redirect(route('product.index'))->with('info','Product Updated');
     }
@@ -103,13 +111,13 @@ class ProductController extends Controller
 
     private function fetch_product()
     {
-        $product_data = Product::where('product_status',1)->get();
+        $product_data = Product::all();
         return $product_data;
     }
 
     private function fetch_product_category()
     {
-        $product_category_data = ProductCategory::where('product_category_status',1)->get();
+        $product_category_data = ProductCategory::all();
         return $product_category_data;
     }
 }

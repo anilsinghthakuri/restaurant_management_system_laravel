@@ -45,12 +45,12 @@ class ProductCategoryController extends Controller
         // dd($request->all());
 
         $request->validate([
-            'product_category_name'=>'required|max:10'
+            'product_category_name'=>'required|max:10|unique:product_categories,product_category_name'
         ]);
 
         $resp_data = ProductCategory::create($request->except('_token'));
 
-        return redirect(route('product-category.index'))->with('message','Product Category'.' '.$resp_data['product_category_name'].' '.'Added Successfully');
+        return redirect(route('product-category.index'))->with('message','Product Category Added Successfully');
         // return $resp_data;
     }
 
@@ -91,7 +91,12 @@ class ProductCategoryController extends Controller
      */
     public function update(Request $request, ProductCategory $productCategory)
     {
-        // dd($productCategory);
+        // dd($productCategory->product_category_id);
+
+        $request->validate([
+            'product_category_name'=>'required|max:10|unique:product_categories,product_category_name,'.$productCategory->id,
+        ]);
+
         $productCategory->update($request->except('_token'));
         return redirect(route('product-category.index'))->with('info','Product Category Updated');
     }

@@ -5,6 +5,15 @@ body{
     background: #f1f1f1;
 
 }
+
+
+/* style by anil */
+
+.active_link {
+    color: #66d203;
+}
+
+/*  */
 button.btn.btn-primary.font-btn-part {
     font-size: 12px;
     border-color: #4e73df;

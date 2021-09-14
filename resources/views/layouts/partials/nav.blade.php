@@ -21,35 +21,15 @@
                     <li><a class="dropdown-item" href="/table"> Add Table</a></li>
                 </ul>
             </li>
-            {{-- <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="productID" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false"><i class="fa fa-archive"></i>
-                    Product
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="productID">
-
-                    <li>
-                        <a class="dropdown-item" href="/add-product">Add Product</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="/product">Product List</a>
-                    </li>
-
-
-                </ul>
-
-            </li> --}}
-
-            <li class="nav-item">
-                <a class="nav-link  " aria-current="active" href="{{route('product.index')}}"> <i class="fa fa-archive"></i>
+            {{-- <li class="nav-item active_link">
+                <a class="nav-link " aria-current="active" href="{{route('product.index')}}"> <i
+                        class="fa fa-archive"></i>
                     Products</a>
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a class="nav-link  " aria-current="active" href="/credits"> <i class="fa fa-hospital"></i>
                     Collection</a>
             </li>
-
-
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="productID" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false"><i class="fa fa-users"></i> People
@@ -110,18 +90,17 @@
                 </ul>
 
             </li>
-
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="categoriesId" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false"><i class="far fa-bookmark"></i> Categories
+                    aria-expanded="false"><i class="far fa-bookmark"></i> Menu Item
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="categoriesId">
 
                     <li>
-                        <a class="dropdown-item" href="{{route('product-category.index')}}"> Product</a>
+                        <a class="dropdown-item" href="{{route('product-category.index')}}"> Product Categories </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="/expense-category">Expenses
+                        <a class="dropdown-item" href="{{route('product.index')}}">Products
                         </a>
                     </li>
 
@@ -129,7 +108,6 @@
                 </ul>
 
             </li>
-
             <li class="nav-item">
                 <a class="nav-link  " aria-current="active" href="#"><i class="fa fa-cogs"></i> Setting</a>
             </li>
@@ -163,11 +141,8 @@
                 </ul>
 
             </li>
-
-
-
-
         </ul>
+
         <ul class="d-flex flex-row justify-content-between ml-auto">
             <li class="nav-item">
                 <p class=" icon-height  "><img src="{{asset('img/user1.png')}}" alt=""> {{Auth::user()->name}}
