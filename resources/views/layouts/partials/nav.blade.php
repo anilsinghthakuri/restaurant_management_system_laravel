@@ -21,18 +21,13 @@
                     <li><a class="dropdown-item" href="/table"> Add Table</a></li>
                 </ul>
             </li>
-            {{-- <li class="nav-item active_link">
-                <a class="nav-link " aria-current="active" href="{{route('product.index')}}"> <i
-                        class="fa fa-archive"></i>
-                    Products</a>
-            </li> --}}
             <li class="nav-item">
                 <a class="nav-link  " aria-current="active" href="/credits"> <i class="fa fa-hospital"></i>
                     Collection</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="productID" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false"><i class="fa fa-users"></i> People
+                    aria-expanded="false"><i class="fa fa-users"></i> Customer
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="productID">
 
@@ -40,7 +35,13 @@
                         <a class="dropdown-item" href="#">Waiters</a>
                     </li> --}}
                     <li>
-                        <a class="dropdown-item" href="/customer">Customers</a>
+                        <a class="dropdown-item" href="{{route('customer.index')}}">Credit Customer</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="/customer">Customer Ledger</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="/customer">Customer Receipt</a>
                     </li>
                     {{-- <li>
                         <a class="dropdown-item" href="#">Suppliers</a>
