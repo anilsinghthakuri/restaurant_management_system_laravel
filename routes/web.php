@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\CustomerLedgerController;
+use App\Http\Controllers\CustomerReceiptController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
@@ -32,7 +34,13 @@ Route::middleware(['auth'])->group(function () {
         //Customer routes
         Route::resource('customer', CustomerController::class);
 
+        //Customer receipt routes
+        Route::resource('customer-receipt', CustomerReceiptController::class);
+        Route::get('customer-detail-receipt-entry/{id}', [CustomerReceiptController::class,'show_details_for_receipt_entry'])->name('customer-detail-receipt-entry.show_details_for_receipt_entry');
 
+
+        //customer ledger routes
+        Route::get('/customer-ledger',[CustomerLedgerController::class,'index'])->name('customer-ledger.index');
 
 
         // route for logout

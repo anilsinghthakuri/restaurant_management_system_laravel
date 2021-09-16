@@ -38,10 +38,10 @@
                         <a class="dropdown-item" href="{{route('customer.index')}}">Credit Customer</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="/customer">Customer Ledger</a>
+                        <a class="dropdown-item" href="{{route('customer-ledger.index')}}">Customer Ledger</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="/customer">Customer Receipt</a>
+                        <a class="dropdown-item" href="{{route('customer-receipt.index')}}">Customer Receipt</a>
                     </li>
                     {{-- <li>
                         <a class="dropdown-item" href="#">Suppliers</a>

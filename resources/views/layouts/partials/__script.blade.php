@@ -51,4 +51,10 @@
     @endif
   </script>
 
+<script>
+    $(document).ready(function() {
+    $('.customer').select2();
+    });
+</script>
+
 @stack('script');
