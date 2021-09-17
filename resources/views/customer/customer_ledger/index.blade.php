@@ -11,17 +11,19 @@
                     <h5>Search by Customer Name and Date</h5>
                     </div>
                     <div class="col-md-12 mt-3">
-                        <form action="#" method="get">
+                        <form action="{{route('customer-ledger-show.show_customer_ledger_on_name_and_date')}}" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label for="customer_id">Choose Customer</label>
-                                                <select class="form-control customer" name="customer_id" id="customer_id">
-                                                    <option>Choose Customer</option>
-                                                    <option>hari lal </option>
-                                                    <option>Madan parshad</option>
+                                                <select class="form-control customer" name="customer_id" id="customer_id" required>
+                                                    <option selected disabled value="" >Choose Customer</option>
+                                                    @foreach ($customer_data as $item)
+                                                        <option value="{{$item->id}}">{{$item->customer_name}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>

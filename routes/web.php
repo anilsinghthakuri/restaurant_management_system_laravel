@@ -41,6 +41,7 @@ Route::middleware(['auth'])->group(function () {
 
         //customer ledger routes
         Route::get('/customer-ledger',[CustomerLedgerController::class,'index'])->name('customer-ledger.index');
+        Route::post('/customer-ledger-show',[CustomerLedgerController::class,'show_customer_ledger_on_name_and_date'])->name('customer-ledger-show.show_customer_ledger_on_name_and_date');
 
 
         // route for logout

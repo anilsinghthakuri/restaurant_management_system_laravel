@@ -60,8 +60,9 @@ function nepali_now_date()
 
 
 //convert bs to ad
-function english_now_date($date)
+function nepali_to_english_date($date)
 {
+    // dd($date);
     $obj = new NepaliDate();
 
     $nepali_year = $date[0];
@@ -71,6 +72,8 @@ function english_now_date($date)
 
      // Convert BS to AD.
     $array_ad_date = $obj->convertBsToAd($nepali_year,$nepali_month,$nepali_day);
+
+    // dd($array_ad_date);
 
     $year = $array_ad_date['year'];
     $month = $array_ad_date['month'];
@@ -106,5 +109,38 @@ function now_time()
     $now_time = $array_date['hour'].':'.$array_date['minute'].':'.$array_date['second'];
 
     return $now_time;
+}
+
+function change_date_bs_to_ad_and_add_now_timestamp($nepali_date)
+{
+    $array_of_nepali_date = explode('-',$nepali_date);
+    $ad_date = nepali_to_english_date($array_of_nepali_date);
+    $now_time = now_time();
+
+    $ad_date_with_time = $ad_date.' '.$now_time;
+
+    return $ad_date_with_time;
+}
+
+function change_date_bs_to_ad_and_add_timestamp_for_from_date($nepali_date)
+{
+    $array_of_nepali_date = explode('-',$nepali_date);
+    $ad_date = nepali_to_english_date($array_of_nepali_date);
+    $now_time = '00:00:00';
+
+    $ad_date_with_time = $ad_date.' '.$now_time;
+
+    return $ad_date_with_time;
+}
+
+function change_date_bs_to_ad_and_add_timestamp_for_to_date($nepali_date)
+{
+    $array_of_nepali_date = explode('-',$nepali_date);
+    $ad_date = nepali_to_english_date($array_of_nepali_date);
+    $now_time = '23:59:59';
+
+    $ad_date_with_time = $ad_date.' '.$now_time;
+
+    return $ad_date_with_time;
 }
 ?>
